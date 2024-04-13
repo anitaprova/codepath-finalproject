@@ -1,0 +1,40 @@
+form{
+    background-color: #FFAFCC;
+    padding: 10%;
+    box-shadow: 10px 10px #CDB4DB;
+}
+
+select{
+    font-family: Avenir, "Century Gothic", sans-serif;
+    padding: 1%;
+    border-color: #FFC8DD;
+    width: 100%;
+}
+
+label {
+    font-size: 20px;
+}
+
+input[type=radio]{
+    width: 25px;
+}
+
+input[type=submit] {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #ff3582;
+    color:white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    margin-top: 20px;
+  }
+
+input[type=submit]:hover {
+    border-color: #CDB4DB;
+}

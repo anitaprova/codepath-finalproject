@@ -1,0 +1,29 @@
+.Card {
+    backdrop-filter: blur(2px);
+    border: 1px solid #A2D2FF;
+    border-radius: 20px;
+    padding: 10%;
+    margin-bottom: 25px;
+    width: 400px;
+    text-align: center;
+    background-color: #BDE0FE;
+    box-shadow: 10px 10px #CDB4DB;
+}
+
+.Card:hover{
+    background-color: aliceblue;
+}
+
+.name {
+    padding-left:30px;
+    font-size: 24px;
+}
+
+.moreButton {
+    width: 30px;
+    float:right;
+
+}
+.moreButton:hover {
+    cursor: pointer;
+}
