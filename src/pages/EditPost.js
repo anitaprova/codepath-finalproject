@@ -47,7 +47,7 @@ const EditPost = ({ data }) => {
   const deletePost = async (event) => {
     event.preventDefault();
     await supabase.from("Game").delete().eq("id", id);
-    window.location = "http://localhost:3000/";
+    window.location = "/";
   };
 
   return (

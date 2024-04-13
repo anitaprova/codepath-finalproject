@@ -15,9 +15,9 @@ const Card = (props) =>  {
           <img className="moreButton" alt="edit button" src={more} />
         </Link>
         <h2 className="title">{props.title}</h2>
-        <p className="name">by: {props.name}</p>
-        <p className="name">Game: {props.game}</p>
-        <p>
+        <p className="nauthorame">by: {props.name}</p>
+        <p className="game">Game: {props.game}</p>
+        <p className="likes">
           <i className="fa fa-thumbs-o-up" style={{ color: "#FFAFCC" }}></i> Likes:{" "}
           {props.likes}
         </p>

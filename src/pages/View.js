@@ -6,6 +6,7 @@ import "./View.css";
 const View = (props) => {
   const [posts, setPosts] = useState([]);
   const [currentPost, setCurrentPost] = useState([]);
+  const [likes, setLikes] = useState(0);
   const { id } = useParams();
 
   useEffect(() => {
@@ -13,25 +14,42 @@ const View = (props) => {
       const { data } = await supabase.from("Game").select();
       setPosts(data);
     };
-    fetchPosts();
+    if (posts.length === 0) fetchPosts();
 
-    console.log(posts);
     if (posts) {
       const post = posts.find((post) => post.id === parseInt(id));
       setCurrentPost(post);
     }
-  }, [id, posts]);
+  }, [currentPost, id, posts]);
 
-  // console.log("posts", posts);
+  useEffect(() => {
+    if (posts && currentPost)
+      setLikes(currentPost.likes);
+  }, [currentPost, posts])
+  // console.log(posts);
+
+  const updateLikes = async () => {
+    await supabase
+      .from("Game")
+      .update({
+        likes: currentPost.likes+1,
+      })
+      .eq("id", currentPost.id);
+
+      setLikes(likes + 1);
+  };
 
   return (
     <div className="info-container">
       {posts && currentPost && (
         <div className="info">
-          <h1>{currentPost.title}</h1>
-          <p>{currentPost.name}</p>
-          <p>{currentPost.game}</p>
-          <p>{currentPost.description}</p>
+          <p className="name">{currentPost.name}</p>
+          <h1 className="title">{currentPost.title}</h1>
+          <p className="game">Game: {currentPost.game}</p>
+          <p className="description">{currentPost.description}</p>
+          <button className="likes" onClick={() => updateLikes()}>
+            <i className="fa fa-thumbs-o-up"></i> Upvote: {likes}
+          </button>
         </div>
       )}
     </div>

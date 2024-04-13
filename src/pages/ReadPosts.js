@@ -30,6 +30,7 @@ const ReadPosts = (props) => {
               title={post.title}
               description={post.description}
               game={post.game}
+              likes={post.likes}
             />
           ))
         ) : (
