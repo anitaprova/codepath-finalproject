@@ -3,5 +3,6 @@
     grid-auto-flow: row;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    background-color: aquamarine;
 }
 

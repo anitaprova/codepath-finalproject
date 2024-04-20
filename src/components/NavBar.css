@@ -13,3 +13,7 @@
   width: 100%; 
 	z-index: 1000;
 }
+
+.search{
+  width: 500px;
+}
