@@ -38,6 +38,7 @@ const ReadPosts = ({ props, searchQuery }) => {
   return (
     <div>
       <div>
+        <h2 style={{textAlign: "center"}}>Come here and discuss all sorts of games!</h2>
         Order By:{" "}
         <button className="order" onClick={newestPosts}>
           Newest
@@ -46,7 +47,7 @@ const ReadPosts = ({ props, searchQuery }) => {
           Most popular
         </button>
       </div>
-      <br/>
+      <br />
       <div className="ReadPosts">
         {filteredPosts && filteredPosts.length > 0 ? (
           filteredPosts.map((post, index) => (

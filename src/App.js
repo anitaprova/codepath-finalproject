@@ -40,7 +40,6 @@ const App = () => {
     <div className="App">
       <div className="header">
         <Navbar data={posts} onSearch={handleSearch} />
-        <h2>Come here and discuss all sorts of games!</h2>
       </div>
       {element}
     </div>

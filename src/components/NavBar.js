@@ -16,7 +16,6 @@ const Navbar = ({ onSearch }) => {
         Home
       </Link>
       <input
-        id="search"
         name="search"
         className="search"
         type="text"

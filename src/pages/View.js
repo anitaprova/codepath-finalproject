@@ -7,6 +7,9 @@ const View = (props) => {
   const [posts, setPosts] = useState([]);
   const [currentPost, setCurrentPost] = useState([]);
   const [likes, setLikes] = useState(0);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -23,21 +26,41 @@ const View = (props) => {
   }, [currentPost, id, posts]);
 
   useEffect(() => {
-    if (posts && currentPost)
+    if (posts && currentPost) {
       setLikes(currentPost.likes);
-  }, [currentPost, posts])
-  // console.log(posts);
+      setComments(currentPost.comments || []);
+    }
+  }, [currentPost, posts]);
 
   const updateLikes = async () => {
     await supabase
       .from("Game")
       .update({
-        likes: currentPost.likes+1,
+        likes: currentPost.likes + 1,
       })
       .eq("id", currentPost.id);
 
-      setLikes(likes + 1);
+    setLikes(likes + 1);
   };
+
+  const handleCommentChange = (event) => {
+    setNewComment(event.target.value);
+  };
+
+  const addComment = async () => {
+    const updatedComments = [...comments, newComment];
+    await supabase
+      .from("Game")
+      .update({
+        comments: updatedComments,
+      })
+      .eq("id", currentPost.id);
+
+    setComments(updatedComments);
+    setNewComment("");
+  };
+
+  // console.log("comments", comments);
 
   return (
     <div className="info-container">
@@ -50,6 +73,27 @@ const View = (props) => {
           <button className="likes" onClick={() => updateLikes()}>
             <i className="fa fa-thumbs-o-up"></i> Upvote: {likes}
           </button>
+
+          <div className="comments-container">
+            <h3>Comments</h3>
+            <ul>
+              {currentPost.comments &&
+                currentPost.comments.length > 0 &&
+                comments.map((comment, index) => (
+                  <li key={index}>{comment}</li>
+                ))}
+            </ul>
+
+            <input
+              name="comments"
+              type="text"
+              placeholder="Leave a comment..."
+              onChange={handleCommentChange}
+            />
+            <br />
+            <br />
+            <button onClick={addComment}>Add Comment</button>
+          </div>
         </div>
       )}
     </div>
