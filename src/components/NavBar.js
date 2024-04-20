@@ -20,7 +20,7 @@ const Navbar = ({ onSearch }) => {
         name="search"
         className="search"
         type="text"
-        placeholder="Search.."
+        placeholder="Search..."
         onChange={handleSearch}
       />
       <Link to="/new" style={{ textDecoration: "none", color: "inherit" }}>

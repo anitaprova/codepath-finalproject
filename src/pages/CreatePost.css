@@ -5,7 +5,7 @@ form{
 }
 
 select{
-    font-family: Avenir, "Century Gothic", sans-serif;
+    font-family: inherit;
     padding: 1%;
     border-color: #FFC8DD;
     width: 100%;

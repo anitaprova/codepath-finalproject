@@ -1,4 +1,8 @@
 .navbar {
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
   background-color: #A2D2FF;
   padding: 1%;
 
@@ -12,8 +16,11 @@
 	right: 0;
   width: 100%; 
 	z-index: 1000;
+
+  border-bottom: 15px solid #CDB4DB;
 }
 
 .search{
+  font-family: inherit;
   width: 500px;
 }

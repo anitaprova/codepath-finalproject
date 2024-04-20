@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { supabase } from "../client";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import "./ReadPosts.css";
 
 const ReadPosts = ({ props, searchQuery }) => {
   const [posts, setPosts] = useState([]);
@@ -36,10 +37,16 @@ const ReadPosts = ({ props, searchQuery }) => {
   
   return (
     <div>
-      <p>
-        Order By: <button onClick={newestPosts}>Newest</button>{" "}
-        <button onClick={mostPopularPosts}>Most popular</button>
-      </p>
+      <div>
+        Order By:{" "}
+        <button className="order" onClick={newestPosts}>
+          Newest
+        </button>{" "}
+        <button className="order" onClick={mostPopularPosts}>
+          Most popular
+        </button>
+      </div>
+      <br/>
       <div className="ReadPosts">
         {filteredPosts && filteredPosts.length > 0 ? (
           filteredPosts.map((post, index) => (
