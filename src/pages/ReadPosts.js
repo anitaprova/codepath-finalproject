@@ -53,6 +53,7 @@ const ReadPosts = ({ props, searchQuery }) => {
           filteredPosts.map((post, index) => (
             <Card
               key={index}
+              time={post.created_at}
               id={post.id}
               name={post.name}
               title={post.title}

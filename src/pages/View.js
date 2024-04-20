@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../client";
+import { formatDistanceToNow } from "date-fns";
 import "./View.css";
 
 const View = (props) => {
@@ -66,6 +67,9 @@ const View = (props) => {
     <div className="info-container">
       {posts && currentPost && (
         <div className="info">
+          <p className="time">
+            Posted {formatDistanceToNow(new Date(currentPost.created_at))} ago
+          </p>
           <p className="name">{currentPost.name}</p>
           <h1 className="title">{currentPost.title}</h1>
           <p className="game">Game: {currentPost.game}</p>
