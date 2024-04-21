@@ -61,14 +61,18 @@ const View = (props) => {
     setNewComment("");
   };
 
-  // console.log("comments", comments);
+  console.log("comments", posts);
 
   return (
     <div className="info-container">
       {posts && currentPost && (
         <div className="info">
           <p className="time">
-            Posted {formatDistanceToNow(new Date(currentPost.created_at))} ago
+            Posted{" "}
+            {currentPost.created_at && formatDistanceToNow(
+              new Date(currentPost.created_at)
+            )}{" "}
+            ago
           </p>
           <p className="name">{currentPost.name}</p>
           <h1 className="title">{currentPost.title}</h1>
