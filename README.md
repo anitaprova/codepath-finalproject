@@ -1,4 +1,4 @@
-# Web Development Project 7 - Joystick Junction Joystick
+# Web Development Project 7 - Joystick Junction
 
 Submitted by: Anita Prova
 
