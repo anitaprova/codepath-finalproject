@@ -1,8 +1,8 @@
-# Web Development Project 7 - Among Us
+# Web Development Project 7 - Joystick Junction Joystick
 
 Submitted by: Anita Prova
 
-This web app: You can add crewmates with unique details. 
+This web app: You can add posts about games with unique details. 
 
 Time spent: 5 hours spent in total
 
